@@ -266,12 +266,24 @@ $latest_reservation = $latest_reservation_result->fetch_assoc();
         </aside>
     </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p><?php echo htmlspecialchars($footer_data['footer_text']); ?></p>
-            <p>Alamat: <?php echo htmlspecialchars($footer_data['footer_address']); ?></p>
-            <p>Kontak: <?php echo htmlspecialchars($footer_data['footer_contact']); ?></p>
+       <footer class="footer">
+    <div class="footer-content">
+        <div class="social-media">
+            <?php if (isset($_SESSION['username'])): ?>
+                <p>Twitter: <?php echo htmlspecialchars($_SESSION['username']); ?>@twitter</p>
+                <p>Facebook: <?php echo htmlspecialchars($_SESSION['username']);?> @facebook</p>
+                <p>Instagram: <?php echo htmlspecialchars($_SESSION['username']);?> @instagram</p>
+            <?php else: ?>
+                <p>Belum ada pengguna yang login.</p>
+            <?php endif; ?>
         </div>
-    </footer>
+        <div class="copyright">
+            <p>© Copyright 2020. All Rights Reserved</p>
+        </div>
+        <div class="project">
+        <p><?php echo htmlspecialchars($footer_data['project']); ?></p>
+      </div>
+    </div>
+</footer>
 </body>
 </html>
