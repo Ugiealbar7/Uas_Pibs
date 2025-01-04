@@ -323,18 +323,24 @@ header h1 {
     </aside>
 
 </div>
-<footer class="footer">
-<div class="footer-content">
-    <div class="social-media">
-        <p>&copy; <?php echo $footer_data['social_media']; ?></p>
+    <footer class="footer">
+    <div class="footer-content">
+        <div class="social-media">
+            <?php if (isset($_SESSION['username'])): ?>
+                <p>Twitter: <?php echo htmlspecialchars($_SESSION['username']); ?>@twitter</p>
+                <p>Facebook: <?php echo htmlspecialchars($_SESSION['username']);?> @facebook</p>
+                <p>Instagram: <?php echo htmlspecialchars($_SESSION['username']);?> @instagram</p>
+            <?php else: ?>
+                <p>Belum ada pengguna yang login.</p>
+            <?php endif; ?>
+        </div>
+        <div class="copyright">
+            <p>© Copyright 2020. All Rights Reserved</p>
+        </div>
+        <div class="project">
+        <p><?php echo htmlspecialchars($footer_data['project']); ?></p>
+      </div>
     </div>
-    <div class="copyright">
-        <p>&copy; <?php echo $footer_data['copyright']; ?></p>
-    </div>
-    <div class="project">
-        <p>&copy; <?php echo $footer_data['project']; ?></p>
-    </div>
-</div>
 </footer>
 </body>
 </html>
