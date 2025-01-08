@@ -218,11 +218,12 @@ $latest_reservation = $latest_reservation_result->fetch_assoc();
     </header>
 
     <div class="main-container">
-        <nav>
+       <nav>
             <h3>Menu</h3>
             <ul>
                 <li><a href="index.php"><i class="fas fa-user"></i> Halaman User</a></li>
                 <li><a href="login.php"><i class="fas fa-user-shield"></i> Halaman Admin</a></li>
+                <li><a href="aboutUs.php"><i class="fas fa-user-shield"></i> About Us</a></li>
             </ul>
         </nav>
 
